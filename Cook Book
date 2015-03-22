@@ -2,3 +2,20 @@ Code Book
 This Codebook describes the variables, the data, and transformations & work performed to clean up the data in the Getting and Cleaning Data course poject.
 The variables
 In the final Tidy_data are 86 variables which are means of the measurements from the acclerometer and gyroscope as described inthe "readme" file in the data folder. The measurements selected were the mean or standard deviations only as required in the assignment.
+
+The Data 
+This data is downloaded  from UCI machine learning repository: "Human Activity Recognition Using Smartphones Data Set".
+A full description is available at the site http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones.
+There are 30 subjects each doing 6 different activities:
+	Activity_name
+	1	WALKING
+	2	WALKING_UPSTAIRS
+	3	WALKING_DOWNSTAIRS
+	4	SITTING
+	5	STANDING
+	6	LAYING
+
+
+Transformations
+Among the 128 measurements only those with mean or standard deviations are selected for the tidy data set. These variables were summarised by mean with  grouping by subject and activity. Hence there are 6 times 30 = 180 rows in the final tidy data.
+
