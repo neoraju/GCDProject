@@ -18,4 +18,6 @@ There are 30 subjects each doing 6 different activities:
 
 Transformations
 Among the 128 measurements only those with mean or standard deviations are selected for the tidy data set. These variables were summarised by mean with  grouping by subject and activity. Hence there are 6 times 30 = 180 rows in the final tidy data.
+An additional variable(group) added to identify which group the subject belongs to "test" or "train".
+
 
