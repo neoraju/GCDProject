@@ -1,4 +1,5 @@
-# For the purpose of this assignment I assume that the use has already downloaded the data and copied the data into the current working directory. Do not change the name of the folders or subfolders
+# For the purpose of this assignment I assume that the user has already downloaded the data and copied it in the current working directory. 
+# Please do not change the name of the folders or subfolders
 #Main folder name is -> UCI HAR Dataset.
 
 ##########     DATA DOWNLOAD & UNZIPPING CODE       ##########
@@ -27,7 +28,8 @@ colnames(Measure_data) <- Features_Names
 Keep_vars <- grep(Features_Names, pattern = "(mean|std)",ignore.case=TRUE)
 Measure_data <- Measure_data[,Keep_vars]
 
-####        TASK 3
+####        TASK 3    and   TASK 4
+# Appropriately labels the data set with descriptive variable names
 # Uses descriptive activity names to name the activities in the data set
 # Read the train data subject Ids
 Activity_Labels <- read.table("./UCI HAR Dataset/activity_labels.txt",col.names= c("Activity_id","Activity_name"))
@@ -48,14 +50,10 @@ Activity_test$Activity_id<-new_test[match(Activity_test$Activity_id, old_test)]
 Subjects_test$group<-"test"
 Subjects_train$group<-"train"
 Subjects_data<- rbind ( cbind(Subjects_test, Activity_test), cbind(Subjects_train, Activity_train))
-
-####        TASK 4
-# Appropriately labels the data set with descriptive variable names. 
 Full_data<-cbind(Subjects_data,Measure_data)
 
 ####        TASK 5
 #From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-
 Tidy_data <- ddply(Full_data, .(Subject_id, Activity_id), numcolwise(mean))
 # output the data set
 write.table(Tidy_data, "Tidy_data.txt", row.names = F)
