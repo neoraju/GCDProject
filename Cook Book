@@ -1,0 +1,4 @@
+Code Book
+This Codebook describes the variables, the data, and transformations & work performed to clean up the data in the Getting and Cleaning Data course poject.
+The variables
+In the final Tidy_data are 86 variables which are means of the measurements from the acclerometer and gyroscope as described inthe "readme" file in the data folder. The measurements selected were the mean or standard deviations only as required in the assignment.
